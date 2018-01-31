@@ -7,52 +7,34 @@
 
 # 2. 为什么要有这个规范？
 
-PSR-2 was accepted in 2012 and since then a number of changes have been made to PHP,
 PSR-2自2012年通过后，PHP已经有了一系列改变，
-most notably recent changes for PHP 7, which have implications for coding style
 尤其是 PHP 7 带来的显著改变，急需要推出新的代码风格指南。
-guidelines. Whilst PSR-2 is very comprehensive of PHP functionality that existed at
 PSR-2 在撰写时对 PHP 功能覆盖很全面，
-the time of writing, new functionality is very open to interpretation. PSR-12 seeks
 而对新增的功能支持也很好。
-to provide a set way that both coding style tools can implement, projects can declare
 PSR-12试图提供一种方式使得代码风格检查工具可实现，项目可以声明遵守
-adherence to and developers can easily relate on between different projects for these
 且开发者可以很容易的在不同项目间联系起来，
-coding style reducing cognitive friction.
 减少代码风格不同产生的摩擦。
 
-PSR-2 was created based upon the common practices of the PHP FIG projects at the time
 PSR-2 由 PHP FIG 项目当时的通用实践而建立
-but ultimately this meant it was a compromise of many of the different projects' guidelines.
 但最终表明它是一个不同项目指南的妥协方案。
-The repercussions of projects changing their coding guidelines to align with PSR-2 (Almost
 这间接导致项目从自己的编码规范转为支持PSR-2
-all projects do align with PSR-1, even if it is not explicitly stated) were seen to be too
 （而且大部分都支持PSR-1，尽管没有明确指出）变动太大
-great (losing git history, huge changesets and breaking existing patches/pull requests).
 （丢失git历史，巨大的变更列表，被破坏的现存patch和PR）。
 
-PSR-2 required adopters to reformat large amounts of existing code which stifled adoption.
 PSR-2 需要适配者格式化大量现存不合规范的代码。
-To help alleviate this issue with PSR-12, we have taken a more prescriptive approach and
 PSR-12 为了减轻这个麻烦，我们采用了一个更合规范的方法
-defined the standards for new language features as they are released. We hope that because
 并为新语言特性在发布后定义标准。我们希望如此
-this specification is defined prior to mass amounts of code being written, it will have a
-因为这个规范是闲鱼编写的代码定义的，
-better chance of being adopted but this is in the hope that it will mean that projects.
+因为这个规范是先于编写的代码定义的，
+最好有机会被接受。
 
 
-However it is for a lack of wanting to be dictatorial that we will aim to apply PSR-2
-styling, rationale and stances (Described in Section 4, Approaches) in PSR-12 instead of
-establishing new conventions.
+然而我们仍要实施PSR-2，而不在PSR-12外开新的议题（参考第四节，提案）。
 
-# 3. Scope
+# 3. 范围
 
-## 3.1. Goals
+## 3.1. 目标
 
-This PSR shares the same goals as PSR-2.
+该PSR与PSR-2目标一致.
 
 > The intent of this guide is to reduce cognitive friction when scanning code from
 > different authors. It does so by enumerating a shared set of rules and expectations
@@ -69,22 +51,21 @@ This PSR will include coding style guidelines related to new functionality added
 after the publication of PSR-2; this includes PHP 5.5, PHP 5.6 and PHP 7.0. This PSR will
 also include clarifications on the text of PSR-2, as described in the PSR-2 Errata.
 
-## 3.2. Non-Goals
+## 3.2. 非目标
 
 It is not the intention of this PSR to add entirely new coding style guidelines PSR-12 will
 also not change anything stipulated in PSR-1 and PSR-2.
 
-# 4. Approaches
+# 4. 提案
 
-The overarching approach is to attempt to apply existing PSR-2 styling and rationale to
-new functionality as opposed to establishing new conventions.
+实施PSR-12且支持新语言特性
 
-## 4.1. Strict Types Declarations
+## 4.1. 严格类型声明
 
-There was a discussion about whether or not strict types should be enforced in the standard
-https://github.com/cs-extended/fig-standards/issues/7. All were in agreement we should only
-use a MUST or MUST NOT statement and avoid the use of a SHOULD statement and nobody wanted
-to say that strict types could not be declared. The discussion was whether it should be
+这里有讨论是否该在标准中使用严格类型模式
+https://github.com/cs-extended/fig-standards/issues/7。
+综合考虑我们要使用MUST、MUST NOT，尽量避免SHOULD，没人认为严格模式不该声明。
+The discussion was whether it should be
 considered a coding style item which should be covered or whether it was out of scope and it
 was decided to be out of scope of a coding style guide.
 

@@ -1,4 +1,4 @@
-# PSR-12 Extended Coding Style Guide 扩展代码风格指南
+# PSR-12 扩展代码风格指南 Extended Coding Style Guide
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
 "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be
@@ -10,33 +10,27 @@ interpreted as described in [RFC 2119][].
 本规范基于[PSR-2][]并用与扩展和替换原规范，
 本代码风格指南也需要遵守基础编码规范 [PSR-1][]。
 
-This specification extends, expands and replaces [PSR-2][], the coding style guide and
-requires adherence to [PSR-1][], the basic coding standard.
+跟[PSR-2][]一样，本规范的意图是当阅读不同作者的代码时减少阅读体验的不一致。
+通过列举一系列的规则和预期确定如何格式化PHP代码来实现此目的。
+本 PSR 希望提供一种方式以便代码风格工具可以实现、
+项目可以声明遵守、
+开发者可以容易在不同项目间共用。当多个作者在多个项目间合作时，
+有助于所有项目统一一套规范。
+这个指南的益处不在于规则而在于共用规则。
 
-Like [PSR-2][], the intent of this specification is to reduce cognitive friction when
-scanning code from different authors. It does so by enumerating a shared set of rules
-and expectations about how to format PHP code. This PSR seeks to provide a set way that
-coding style tools can implement, projects can declare adherence to and developers
-can easily relate to between different projects. When various authors collaborate
-across multiple projects, it helps to have one set of guidelines to be used among
-all those projects. Thus, the benefit of this guide is not in the rules themselves
-but the sharing of those rules.
+PSR-2 自2012年通过后，PHP已经有了一系列改变。
+PSR-2 在撰写时对 PHP 功能覆盖很全面，
+而对新增的功能支持也很好。 
+本 PSR 试图对新可用特性以比 PSR-2 中内容更现代化的形式声明，并修正 PSR-2 中错误部分。
 
-[PSR-2][] was accepted in 2012 and since then a number of changes have been made to PHP
-which have implications for coding style guidelines. Whilst [PSR-2] is very comprehensive
-of PHP functionality that existed at the time of writing, new functionality is very
-open to interpretation. This PSR therefore seeks to clarify the content of PSR-2 in
-a more modern context with new functionality available, and make the errata to PSR-2
-binding.
+### 语言版本兼容性 Previous language versions
 
-### Previous language versions
+贯穿本文，如果在你的项目中的PHP版本不支持，
+则任何条目都可以被忽略。
 
-Throughout this document, any instructions MAY be ignored if they do not exist in versions
-of PHP supported by your project.
+### 示例 Example
 
-### Example
-
-This example encompasses some of the rules below as a quick overview:
+本示例包含一些规则以便快速入门：
 
 ~~~php
 <?php
@@ -71,29 +65,29 @@ class Foo extends Bar implements FooInterface
 }
 ~~~
 
-## 2. General
+## 2. 通用 General
 
-### 2.1 Basic Coding Standard
+### 2.1 基本代码规范 Basic Coding Standard
 
-Code MUST follow all rules outlined in [PSR-1].
+代码必须遵守 [PSR-1] 中所有规则。 Code MUST follow all rules outlined in [PSR-1].
 
-The term 'StudlyCaps' in PSR-1 MUST be interpreted as PascalCase where the first letter of
-each word is capitalized including the very first letter.
+PSR-1 中的条目 `驼峰式命名法` 必须以帕斯卡式命名法形式书写，
+即每个命名中首个单词的首字母小写外其他的单词首字母大写。
 
-### 2.2 Files
+### 2.2 文件 Files
 
-All PHP files MUST use the Unix LF (linefeed) line ending only.
+所有 PHP 文件必须只能以 `Unix LF (linefeed)` 行结束符表示。
 
-All PHP files MUST end with a non-blank line, terminated with a single LF.
+所有 PHP 文件必须以一个非空行结束，以单个 LF 终止。
 
-The closing `?>` tag MUST be omitted from files containing only PHP.
+纯 PHP 文件中结束标记 `?>` 应被移除。
 
-### 2.3 Lines
+### 2.3 代码行 Lines
 
-There MUST NOT be a hard limit on line length.
+每行的长度不准有硬性限制。
 
-The soft limit on line length MUST be 120 characters; automated style checkers
-MUST warn but MUST NOT error at the soft limit.
+每行的软性限制长度必须为 120 个字符；自动风格检查工具必须对此发出警告提示
+但不准发出错误提示。
 
 Lines SHOULD NOT be longer than 80 characters; lines longer than that SHOULD
 be split into multiple subsequent lines of no more than 80 characters each.

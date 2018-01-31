@@ -89,39 +89,43 @@ PSR-1 中的条目 `驼峰式命名法` 必须以帕斯卡式命名法形式书�
 每行的软性限制长度必须为 120 个字符；自动风格检查工具必须对此发出警告提示
 但不准发出错误提示。
 
-Lines SHOULD NOT be longer than 80 characters; lines longer than that SHOULD
-be split into multiple subsequent lines of no more than 80 characters each.
+代码行不建议超过 80 个字符；
+过长的建议换行来保证每行均不超过 80 个字符。
 
-There MUST NOT be trailing whitespace at the end of lines.
+每行的结束不准出现空格。
 
-Blank lines MAY be added to improve readability and to indicate related
-blocks of code except where explicitly forbidden.
+空行可以添加来提高代码可读性，区分相关的代码块，
+除非有明确禁止的地方。
 
-There MUST NOT be more than one statement per line.
+每行不准超过一个语句。
 
-### 2.4 Indenting
+### 2.4 缩进 Indenting
 
-Code MUST use an indent of 4 spaces for each indent level, and MUST NOT use
-tabs for indenting.
+代码每一级缩颈都必须使用4个空格做缩进，
+而且不准使用 tab 做缩进。
 
-### 2.5 Keywords and Types
+### 2.5 关键字和类型 Keywords and Types
 
-All PHP reserved keywords and types [[1]][keywords][[2]][types] MUST be in lower case.
+所有 PHP 内置关键字和类型 [[1]][keywords][[2]][types] 必须小写。
 
-Short form of type keywords MUST be used i.e. `bool` instead of `boolean`,
-`int` instead of `integer` etc.
+类型的关键字必须使用短格式，例如：
+`bool` 而不用 `boolean`，
+`int` 而不用 `integer` 等.
 
-## 3. Declare Statements, Namespace, and Import Statements
+## 3. 声明语句，命名空间，导入语句 Declare Statements, Namespace, and Import Statements
 
+PHP 文件的头部可以包含一系列的不同代码块，如果出现，
+每个代码库必须以一个空行分隔，且不准包含空行。
+每个代码库必须按如下列表顺序排列，尽管无用代码块应被移除。
 The header of a PHP file may consist of a number of different blocks. If present,
 each of the blocks below MUST be separated by a single blank line, and MUST NOT contain
 a blank line. Each block MUST be in the order listed below, although blocks that are
 not relevant may be omitted.
 
-* Opening `<?php` tag.
-* File-level docblock.
-* One or more declare statements.
-* The namespace declaration of the file.
+*  `<?php` 标签.
+* 文件级注释文档.
+* 一个或多个声明语句
+* 文件的命名空间声明 The namespace declaration of the file.
 * One or more class-based `use` import statements.
 * One or more function-based `use` import statements.
 * One or more constant-based `use` import statements.

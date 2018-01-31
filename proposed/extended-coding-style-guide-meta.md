@@ -65,25 +65,22 @@ also not change anything stipulated in PSR-1 and PSR-2.
 这里有讨论是否该在标准中使用严格类型模式
 https://github.com/cs-extended/fig-standards/issues/7。
 综合考虑我们要使用MUST、MUST NOT，尽量避免SHOULD，没人认为严格模式不该声明。
-The discussion was whether it should be
-considered a coding style item which should be covered or whether it was out of scope and it
-was decided to be out of scope of a coding style guide.
+讨论重点在于是否需要作为代码风格检查项，是否应在代码风格指南之中体现。
 
-## 4.2. Finally and Return Types Declaration Spacing
+## 4.2. finally和return类型声明空格Finally and Return Types Declaration Spacing
 
-Numerous different options were suggested and they can be seen
-[here for return type declarations](https://gist.github.com/michaelcullum/c025f3870c9ea1dd2668#file-returntypesspacing-php) or
+我们提议了多中选项，如下：
+[here for return type declarations](https://gist.github.com/michaelcullum/c025f3870c9ea1dd2668#file-returntypesspacing-php) 和
 [here for finally blocks](https://gist.github.com/michaelcullum/c025f3870c9ea1dd2668#file-finallyblocks-php)
-and the current implementation was chosen due to consistency with other parts of the PSR-12
-specification that came from PSR-2.
+当前实现被选中的原因是他和 PSR-12 的其他部分兼容很好，
+主要是兼容 PSR-2 。
 
-## 4.3. Enforcing short form for all type keywords
+## 4.3. 强制所有类型关键字为短格式
 
-PHP 7.0 introduced [scalar types declaration](http://php.net/manual/en/functions.arguments.php#functions.arguments.type-declaration)
-which does not support long type aliases. Therefore it makes sense to enforce primary short type forms to be used to
-have uniform syntax and prevent possible confusion.
+PHP 7.0 引入了 [标量类型声明scalar types declaration](http://php.net/manual/en/functions.arguments.php#functions.arguments.type-declaration)
+并不支持`long`类型别名。因此强制优先使用短格式类型命名可以统一格式，阻止可能产生的困扰。
 
-## 4.4. Public Survey
+## 4.4. 公共调查
 
 In order to settle things using data, survey was conducted and responses from 142 people
 including 17 project representatives were gathered:
